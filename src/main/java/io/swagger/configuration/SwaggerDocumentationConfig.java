@@ -7,8 +7,10 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
-import springfox.documentation.spi.DocumentationType;
+import com.lingocoder.springfox.api.doc.DocketTyper;
 import springfox.documentation.spring.web.plugins.Docket;
+import static com.lingocoder.springfox.api.doc.DocketTyper.LATEST;
+import static com.lingocoder.springfox.enums.DocketType.OAS3;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-08-28T10:47:29.899Z")
 
@@ -29,7 +31,7 @@ public class SwaggerDocumentationConfig {
 
     @Bean
     public Docket customImplementation(){
-        return new Docket(DocumentationType.SWAGGER_2)
+        return DocketTyper.of(OAS3).orElse(LATEST)
                 .select()
                     .apis(RequestHandlerSelectors.basePackage("io.swagger.api"))
                     .build()
