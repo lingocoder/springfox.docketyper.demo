@@ -42,7 +42,7 @@ Following that, minor edits were made to [_`SwaggerDocumentationConfig.java`_](h
 
 Lastly, a [_`module-info.java`_](https://github.com/lingocoder/springfox.docketyper.demo/commit/949dd4c5e98c2ad125461b228cb1ab1626986c93#diff-b2e60e6dba0d888da1bf8248dbbc287dR1) file was introduced that specifies the list of automatic and explicit modules required by this demonstration module.
 
-Importantly, _`springfox.documentation.spi`_ is ***not*** a dependency of this module. Its absense from the module path prevents [*the SpringFox \#2064 split package issue*](https://github.com/springfox/springfox/issues/2064).
+Importantly, the _`springfox.spi`_ automatic module is ***not*** a dependency of this module. Its absense from the module path prevents [*the SpringFox \#2064 split package issue*](https://github.com/springfox/springfox/issues/2064).
 
 ### Run this demo
 
